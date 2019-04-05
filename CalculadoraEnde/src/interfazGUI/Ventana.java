@@ -1,4 +1,4 @@
-package com.calculadora;
+package interfazGUI;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -22,28 +22,28 @@ import javax.swing.JTextField;
 
 public class Ventana extends JFrame {
 	
-	private JButton bt1 =new JButton("1");
-	private JButton bt2 =new JButton("2");
-	private JButton bt3 =new JButton("3");
-	private JButton bt4 =new JButton("4");
-	private JButton bt5 =new JButton("5");
-	private JButton bt6 =new JButton("6");
-	private JButton bt7 =new JButton("7");
-	private JButton bt8 =new JButton("8");
-	private JButton bt9 =new JButton("9");
+	private static JButton bt1 =new JButton("1");
+	private static  JButton bt2 =new JButton("2");
+	private static  JButton bt3 =new JButton("3");
+	private static  JButton bt4 =new JButton("4");
+	private static  JButton bt5 =new JButton("5");
+	private static  JButton bt6 =new JButton("6");
+	private static JButton bt7 =new JButton("7");
+	private static JButton bt8 =new JButton("8");
+	private static JButton bt9 =new JButton("9");
 
-	private JButton bt_mult =new JButton("*");
-	private JButton bt_sum =new JButton("+");
-	private JButton bt_res =new JButton("-");
-	private JButton bt_div =new JButton("/");
-	private JButton bt_raiz =new JButton("R");
-	private JButton bt_exp =new JButton("^");
-	private JButton bt_log = new JButton("LOG");
-	private JButton bt_bin = new JButton("BIN");
-	private JButton bt_abs = new JButton("ABS");
+	private static JButton bt_mult =new JButton("*");
+	private static JButton bt_sum =new JButton("+");
+	private static JButton bt_res =new JButton("-");
+	private static JButton bt_div =new JButton("/");
+	private static JButton bt_raiz =new JButton("R");
+	private static JButton bt_exp =new JButton("^");
+	private static JButton bt_log = new JButton("LOG");
+	private static JButton bt_bin = new JButton("BIN");
+	private static JButton bt_abs = new JButton("ABS");
 	
-	private JButton bt_supr =new JButton("C");
-	private JButton bt_eq =new JButton("=");
+	private static JButton bt_supr =new JButton("C");
+	private static JButton bt_eq =new JButton("=");
 	private static JTextField res= new JTextField(20);
 
 
@@ -56,13 +56,13 @@ public class Ventana extends JFrame {
 
 		dibujar();
 		escuchar();
-		
+	}	
 	
 	
-	public static void dibujar(){
+	public void dibujar(){
 		 
 		//opciones por defecto
-		setTitle("Calculadora Gráfica");
+		setTitle("Calculadora Grafica");
 		setLayout(new BorderLayout());;
 		setSize(620, 600);
 		setVisible(true);
@@ -164,9 +164,10 @@ public class Ventana extends JFrame {
 		getContentPane().add(panelNums,BorderLayout.SOUTH);
 		getContentPane().add(panelOperaciones,BorderLayout.CENTER);
 		getContentPane().add(panelResultado, BorderLayout.NORTH);
+		
 	}
 	
-	public static void escuchar() {
+	public void escuchar() {
 		//Respuesta de los botones
 				bt1.addActionListener(new ActionListener() {
 					@Override
@@ -338,12 +339,12 @@ public class Ventana extends JFrame {
 					public void actionPerformed(ActionEvent e) {
 						res.setText(res.getText()+"ABS");
 				}});
-				
-				
-			}
-		
-		
 	}
+				
+			
+		
+		
+	
 	
 	
 	
