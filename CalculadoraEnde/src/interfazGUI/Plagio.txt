@@ -102,3 +102,46 @@ public class ListenerBoton implements ActionListener {
 		
 		
 	}
+	
+	
+	/**
+	 * Método que separa en un array de longitud 3 el texto en pantalla
+	 * @author Rodrigo
+	 */
+	private String[] separar() {
+		
+		String instruccion = pantalla.getText();
+		String primnum;
+		
+		if(instruccion.charAt(0) == ' ')
+			primnum="0";
+		else {
+			primnum=instruccion.substring(0,instruccion.indexOf(' ')); 
+		}
+		String operacion=instruccion.substring(instruccion.indexOf(' ')+1,instruccion.indexOf(' ',instruccion.indexOf(' ')+1));;
+		String segnum;
+		
+		
+		
+		if(instruccion.length()==instruccion.indexOf(operacion+1)) {
+			
+	
+			segnum=" ";
+			
+		}else {
+			
+		
+			
+				segnum = instruccion.substring(instruccion.indexOf(' ',instruccion.indexOf(' ')+1), instruccion.length());
+			
+			
+		}
+		
+		
+		String[] arrayoperacion = {primnum,operacion,segnum};
+		
+		return arrayoperacion;
+		
+	}
+	
+	
