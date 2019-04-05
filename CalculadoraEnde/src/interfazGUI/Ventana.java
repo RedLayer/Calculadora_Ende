@@ -60,7 +60,7 @@ public class Ventana extends JFrame {
 	
 	
 	public static void dibujar(){
-		
+		 
 		//opciones por defecto
 		setTitle("Calculadora Gráfica");
 		setLayout(new BorderLayout());;
