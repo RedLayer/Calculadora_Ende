@@ -54,6 +54,12 @@ public class Ventana extends JFrame {
 	 */
 	public Ventana() {
 
+		dibujar();
+		escuchar();
+		
+	
+	
+	public static void dibujar(){
 		
 		//opciones por defecto
 		setTitle("Calculadora Gráfica");
@@ -158,181 +164,188 @@ public class Ventana extends JFrame {
 		getContentPane().add(panelNums,BorderLayout.SOUTH);
 		getContentPane().add(panelOperaciones,BorderLayout.CENTER);
 		getContentPane().add(panelResultado, BorderLayout.NORTH);
-		
+	}
+	
+	public static void escuchar() {
 		//Respuesta de los botones
-		bt1.addActionListener(new ActionListener() {
-			@Override
-			/**
-			 * acción de  escritura del botón 1
-			 * @param e un evento que representa una acción en el botón
-			 * @return void 
-			 */
+				bt1.addActionListener(new ActionListener() {
+					@Override
+					/**
+					 * acción de  escritura del botón 1
+					 * @param e un evento que representa una acción en el botón
+					 * @return void 
+					 */
+						
+					public void actionPerformed(ActionEvent e) {
+						res.setText(res.getText()+"1");
+				}});
 				
-			public void actionPerformed(ActionEvent e) {
-				res.setText(res.getText()+"1");
-		}});
-		
-		bt2.addActionListener(new ActionListener() {
-			@Override
-			/**
-			 * acción de  escritura del botón 2
-			 * @param e un evento que representa una acción en el botón
-			 * @return void 
-			 */
+				bt2.addActionListener(new ActionListener() {
+					@Override
+					/**
+					 * acción de  escritura del botón 2
+					 * @param e un evento que representa una acción en el botón
+					 * @return void 
+					 */
+						
+					public void actionPerformed(ActionEvent e) {
+						res.setText(res.getText()+"2");
+				}});
 				
-			public void actionPerformed(ActionEvent e) {
-				res.setText(res.getText()+"2");
-		}});
-		
-		bt3.addActionListener(new ActionListener() {
-			@Override
-			/**
-			 * acción de  escritura del botón 3
-			 * @param e un evento que representa una acción en el botón
-			 * @return void 
-			 */
+				bt3.addActionListener(new ActionListener() {
+					@Override
+					/**
+					 * acción de  escritura del botón 3
+					 * @param e un evento que representa una acción en el botón
+					 * @return void 
+					 */
+						
+					public void actionPerformed(ActionEvent e) {
+						res.setText(res.getText()+"3");
+				}});
 				
-			public void actionPerformed(ActionEvent e) {
-				res.setText(res.getText()+"3");
-		}});
-		
-		bt4.addActionListener(new ActionListener() {
-			@Override
-			/**
-			 * acción de  escritura del botón 4
-			 * @param e un evento que representa una acción en el botón
-			 * @return void 
-			 */
-			public void actionPerformed(ActionEvent e) {
-				res.setText(res.getText()+"4");
-		}});			
-		
-		bt5.addActionListener(new ActionListener() {
-			@Override
-			/**
-			 * acción de  escritura del botón 5
-			 * @param e un evento que representa una acción en el botón
-			 * @return void 
-			 */
-			public void actionPerformed(ActionEvent e) {
-				res.setText(res.getText()+"5");
-		}});	
-		
-		bt6.addActionListener(new ActionListener() {
-			@Override
-			/**
-			 * acción de  escritura del botón 6
-			 * @param e un evento que representa una acción en el botón
-			 * @return void 
-			 */
-			public void actionPerformed(ActionEvent e) {
-				res.setText(res.getText()+"6");
-		}});
-		
-		bt7.addActionListener(new ActionListener() {
-			@Override
-			/**
-			 * acción de  escritura del botón 7
-			 * @param e un evento que representa una acción en el botón
-			 * @return void 
-			 */
-			public void actionPerformed(ActionEvent e) {
-				res.setText(res.getText()+"7");
-		}});	
-		bt8.addActionListener(new ActionListener() {
-			@Override
-			/**
-			 * acción de  escritura del botón 8
-			 * @param e un evento que representa una acción en el botón
-			 * @return void 
-			 */
-			public void actionPerformed(ActionEvent e) {
-				res.setText(res.getText()+"8");
-		}});
-		
-		bt9.addActionListener(new ActionListener() {
-			@Override
-			/**
-			 * acción de  escritura del botón 9
-			 * @param e un evento que representa una acción en el botón
-			 * @return void 
-			 */
-			public void actionPerformed(ActionEvent e) {
-				res.setText(res.getText()+"9"
-						+ "");
-		}});
-		
-		
-		
-		
-		//botones operador
-		bt_sum.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				res.setText(res.getText()+"+");
-		}});
-		
-		bt_res.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			
-				res.setText(res.getText()+"-");
-		}});
-		
-		bt_mult.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-			
-				res.setText(res.getText()+"*");
-		}});
-		
-		bt_div.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+				bt4.addActionListener(new ActionListener() {
+					@Override
+					/**
+					 * acción de  escritura del botón 4
+					 * @param e un evento que representa una acción en el botón
+					 * @return void 
+					 */
+					public void actionPerformed(ActionEvent e) {
+						res.setText(res.getText()+"4");
+				}});			
 				
-				res.setText(res.getText()+"/");
-		}});
-		
-		bt_exp.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+				bt5.addActionListener(new ActionListener() {
+					@Override
+					/**
+					 * acción de  escritura del botón 5
+					 * @param e un evento que representa una acción en el botón
+					 * @return void 
+					 */
+					public void actionPerformed(ActionEvent e) {
+						res.setText(res.getText()+"5");
+				}});	
 				
-				res.setText(res.getText()+"^");
-		}});
-		
-		bt_raiz.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
+				bt6.addActionListener(new ActionListener() {
+					@Override
+					/**
+					 * acción de  escritura del botón 6
+					 * @param e un evento que representa una acción en el botón
+					 * @return void 
+					 */
+					public void actionPerformed(ActionEvent e) {
+						res.setText(res.getText()+"6");
+				}});
 				
-				res.setText(res.getText()+"R");
-		}});
-		
-		bt_supr.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				res.setText("");
-		}});
-		
-		bt_bin.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				res.setText(res.getText()+"BIN");
-		}});
-		
-		bt_log.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				res.setText(res.getText()+"LOG");
-		}});
-		
-		bt_abs.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				res.setText(res.getText()+"ABS");
-		}});
+				bt7.addActionListener(new ActionListener() {
+					@Override
+					/**
+					 * acción de  escritura del botón 7
+					 * @param e un evento que representa una acción en el botón
+					 * @return void 
+					 */
+					public void actionPerformed(ActionEvent e) {
+						res.setText(res.getText()+"7");
+				}});	
+				bt8.addActionListener(new ActionListener() {
+					@Override
+					/**
+					 * acción de  escritura del botón 8
+					 * @param e un evento que representa una acción en el botón
+					 * @return void 
+					 */
+					public void actionPerformed(ActionEvent e) {
+						res.setText(res.getText()+"8");
+				}});
+				
+				bt9.addActionListener(new ActionListener() {
+					@Override
+					/**
+					 * acción de  escritura del botón 9
+					 * @param e un evento que representa una acción en el botón
+					 * @return void 
+					 */
+					public void actionPerformed(ActionEvent e) {
+						res.setText(res.getText()+"9"
+								+ "");
+				}});
+				
+				
+				
+				
+				//botones operador
+				bt_sum.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						res.setText(res.getText()+"+");
+				}});
+				
+				bt_res.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+					
+						res.setText(res.getText()+"-");
+				}});
+				
+				bt_mult.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+					
+						res.setText(res.getText()+"*");
+				}});
+				
+				bt_div.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						res.setText(res.getText()+"/");
+				}});
+				
+				bt_exp.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						res.setText(res.getText()+"^");
+				}});
+				
+				bt_raiz.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						
+						res.setText(res.getText()+"R");
+				}});
+				
+				bt_supr.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						res.setText("");
+				}});
+				
+				bt_bin.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						res.setText(res.getText()+"BIN");
+				}});
+				
+				bt_log.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						res.setText(res.getText()+"LOG");
+				}});
+				
+				bt_abs.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						res.setText(res.getText()+"ABS");
+				}});
+				
+				
+			}
 		
 		
 	}
+	
+	
 	
 	
 	
