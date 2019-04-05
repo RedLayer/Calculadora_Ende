@@ -46,7 +46,10 @@ public class Ventana extends JFrame {
 	private static JButton bt_eq =new JButton("=");
 	private static JTextField res= new JTextField(20);
 
-
+	public JPanel panelResultado ;
+	public JPanel panelOperaciones;
+	public JPanel panelNums;
+	
 	/**
 	 * Constructor de la ventana, que la dibuja.
 	 * @param ninguno
@@ -69,14 +72,14 @@ public class Ventana extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		//panel resultado (Norte)
-		JPanel panelResultado = new JPanel();
+		panelResultado = new JPanel();
 		panelResultado.setLayout(new GridLayout(1,1));
 		panelResultado.setPreferredSize(new Dimension(600, 250));
 		panelResultado.add(res);
 		
 		
 		//panel de botones (Medio)
-		JPanel panelOperaciones = new JPanel();
+		panelOperaciones = new JPanel();
 		panelOperaciones.setLayout(new GridLayout(2,1));
 		panelOperaciones.setPreferredSize(new Dimension(30, 20));
 		panelOperaciones.setBackground(Color.white);
@@ -95,7 +98,7 @@ public class Ventana extends JFrame {
 	
 		
 		//panel de botones (Sur)
-		JPanel panelNums = new JPanel();
+		panelNums = new JPanel();
 		panelNums.setLayout(new GridLayout(3,3));
 		panelNums.setPreferredSize(new Dimension(30, 250));
 		
