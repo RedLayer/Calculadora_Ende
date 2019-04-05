@@ -154,7 +154,7 @@ public class Ventana extends JFrame {
 		bt_eq.setFont(bt_raiz.getFont().deriveFont ( 30f ));
 		
 		
-		//Añadir los paneles
+		//Aniadir los paneles
 		getContentPane().add(panelNums,BorderLayout.SOUTH);
 		getContentPane().add(panelOperaciones,BorderLayout.CENTER);
 		getContentPane().add(panelResultado, BorderLayout.NORTH);
