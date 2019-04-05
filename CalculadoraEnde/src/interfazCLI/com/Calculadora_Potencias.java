@@ -13,9 +13,9 @@ import java.util.ArrayList;
  */
 public class Calculadora_Potencias {
 	/**
-	 * Metodo para pasar un numero a binario
-	 * @param num Numero decimal que se pasa a binario
-	 * @return Devuelve un String con el numero en binario
+	 * Metodo para pasar un número a binario
+	 * @param num Número decimal que se pasa a binario
+	 * @return Devuelve un String con el número en binario
 	 * @author Pablo
 	 */
 	public String pasarABinario(int num){
@@ -40,8 +40,8 @@ public class Calculadora_Potencias {
 	 }
 	
 	/**
-	 * Metodo para sacar el valor absoluto de un numero
-	 * @param num Numero que se pasa como parametro para el valor absoluto
+	 * Metodo para sacar el valor absoluto de un número
+	 * @param num Número que se pasa como parametro para el valor absoluto
 	 * @return Devuelve un int con el valor absoluto
 	 * @author Pablo
 	 */
@@ -52,10 +52,10 @@ public class Calculadora_Potencias {
 	}
 	
 	/**
-	 * Metodo que realiza la suma de los dos numeros pasados como parametros
-	 * @param num1 Primer numero pasado como parametro
-	 * @param num2 Segundo numero pasado como parametro
-	 * @return Devuelve la suma de ambos numeros
+	 * Metodo que realiza la suma de los dos números pasados como parametros
+	 * @param num1 Primer número pasado como parametro
+	 * @param num2 Segundo número pasado como parametro
+	 * @return Devuelve la suma de ambos números
 	 * @author Pablo
 	 */
 	public int suma(int num1, int num2)
@@ -65,7 +65,7 @@ public class Calculadora_Potencias {
 	}
 	
 	/**
-	 * Metodo que realiza la resta de dos numeros pasados como parametros
+	 * Metodo que realiza la resta de dos números pasados como parametros
 	 * @param num1
 	 * @param num2
 	 * @return Devuelve la resta de los parametros
@@ -78,7 +78,7 @@ public class Calculadora_Potencias {
 	}
 	
 	/**
-	 * Metodo que realiza la division de dos numeros pasados como parametros
+	 * Metodo que realiza la division de dos números pasados como parametros
 	 * @param num1
 	 * @param num2
 	 * @return Devuelve el cociente de la division
@@ -106,9 +106,9 @@ public class Calculadora_Potencias {
 	}
 	
 	/**
-	 * Metodo que realiza la raiz cuadrada de un numero que se pasa por parametro
+	 * Metodo que realiza la raiz cuadrada de un número que se pasa por parametro
 	 * @param num
-	 * @return Devuelve el resultado de hacer la raiz cuadrada de el numero pasado por el parametro
+	 * @return Devuelve el resultado de hacer la raiz cuadrada de el número pasado por el parametro
 	 * @author Aaron
 	 */
 	public float raiz( int num) {
@@ -123,7 +123,7 @@ public class Calculadora_Potencias {
 	}
 	
 	/**
-	 * Devuelve el logaritmo en base al numero pasado
+	 * Devuelve el logaritmo en base al número pasado
 	 * @param num 
 	 * @param base
 	 * @return devuelce el resultado
