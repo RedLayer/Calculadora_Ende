@@ -61,7 +61,13 @@ public class Ventana extends JFrame {
 		escuchar();
 	}	
 	
-	
+	/**
+	 * Metodo dibujar el cual implementa todas las ventanas y botones de la calculadora
+	 * @param no recibe ningun parametro
+	 * @author todos
+	 * 
+	 */
+
 	public void dibujar(){
 		 
 		//opciones por defecto
@@ -170,6 +176,11 @@ public class Ventana extends JFrame {
 		
 	}
 	
+	/**
+	 * En este metodo estan implementados todos los Listener de la calculadora
+	 * @param no utiliza ningun metodo
+	 * @author todos
+	 */
 	public void escuchar() {
 		//Respuesta de los botones
 				bt1.addActionListener(new ActionListener() {
@@ -353,7 +364,11 @@ public class Ventana extends JFrame {
 	
 	
 	
-	
+	/**
+	 * Metodo main que solo crea una nueva ventana
+	 * @param args
+	 * @author todos
+	 */
 	public static void main(String[] args) {
 
 		new Ventana(); 
