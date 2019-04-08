@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -20,7 +21,7 @@ import javax.swing.JTextField;
  */
 
 
-public class Ventana extends JFrame {
+public class Ventana extends JFrame implements ActionListener {
 	
 	private static JButton bt1 =new JButton("1");
 	private static  JButton bt2 =new JButton("2");
@@ -58,7 +59,7 @@ public class Ventana extends JFrame {
 	public Ventana() {
 
 		dibujar();
-		escuchar();
+
 	}	
 	
 	/**
@@ -102,6 +103,17 @@ public class Ventana extends JFrame {
 		panelOperaciones.add(bt_supr);
 		panelOperaciones.add(bt_eq);
 	
+		bt_sum.addActionListener(this);
+		bt_res.addActionListener(this);
+		bt_mult.addActionListener(this);
+		bt_div.addActionListener(this);
+		bt_exp.addActionListener(this);
+		bt_raiz.addActionListener(this);
+		bt_log.addActionListener(this);
+		bt_abs.addActionListener(this);
+		bt_bin.addActionListener(this);
+		bt_supr.addActionListener(this);
+		bt_eq.addActionListener(this);
 		
 		//panel de botones (Sur)
 		panelNums = new JPanel();
@@ -181,184 +193,73 @@ public class Ventana extends JFrame {
 	 * @param no utiliza ningun metodo
 	 * @author todos
 	 */
-	public void escuchar() {
-		//Respuesta de los botones
-				bt1.addActionListener(new ActionListener() {
-					@Override
-					/**
-					 * acci贸n de  escritura del bot贸n 1
-					 * @param e un evento que representa una acci贸n en el bot贸n
-					 * @return void 
-					 */
-						
-					public void actionPerformed(ActionEvent e) {
-						res.setText(res.getText()+"1");
-				}});
-				
-				bt2.addActionListener(new ActionListener() {
-					@Override
-					/**
-					 * acci贸n de  escritura del bot贸n 2
-					 * @param e un evento que representa una acci贸n en el bot贸n
-					 * @return void 
-					 */
-						
-					public void actionPerformed(ActionEvent e) {
-						res.setText(res.getText()+"2");
-				}});
-				
-				bt3.addActionListener(new ActionListener() {
-					@Override
-					/**
-					 * acci贸n de  escritura del bot贸n 3
-					 * @param e un evento que representa una acci贸n en el bot贸n
-					 * @return void 
-					 */
-						
-					public void actionPerformed(ActionEvent e) {
-						res.setText(res.getText()+"3");
-				}});
-				
-				bt4.addActionListener(new ActionListener() {
-					@Override
-					/**
-					 * acci贸n de  escritura del bot贸n 4
-					 * @param e un evento que representa una acci贸n en el bot贸n
-					 * @return void 
-					 */
-					public void actionPerformed(ActionEvent e) {
-						res.setText(res.getText()+"4");
-				}});			
-				
-				bt5.addActionListener(new ActionListener() {
-					@Override
-					/**
-					 * acci贸n de  escritura del bot贸n 5
-					 * @param e un evento que representa una acci贸n en el bot贸n
-					 * @return void 
-					 */
-					public void actionPerformed(ActionEvent e) {
-						res.setText(res.getText()+"5");
-				}});	
-				
-				bt6.addActionListener(new ActionListener() {
-					@Override
-					/**
-					 * acci贸n de  escritura del bot贸n 6
-					 * @param e un evento que representa una acci贸n en el bot贸n
-					 * @return void 
-					 */
-					public void actionPerformed(ActionEvent e) {
-						res.setText(res.getText()+"6");
-				}});
-				
-				bt7.addActionListener(new ActionListener() {
-					@Override
-					/**
-					 * acci贸n de  escritura del bot贸n 7
-					 * @param e un evento que representa una acci贸n en el bot贸n
-					 * @return void 
-					 */
-					public void actionPerformed(ActionEvent e) {
-						res.setText(res.getText()+"7");
-				}});	
-				bt8.addActionListener(new ActionListener() {
-					@Override
-					/**
-					 * acci贸n de  escritura del bot贸n 8
-					 * @param e un evento que representa una acci贸n en el bot贸n
-					 * @return void 
-					 */
-					public void actionPerformed(ActionEvent e) {
-						res.setText(res.getText()+"8");
-				}});
-				
-				bt9.addActionListener(new ActionListener() {
-					@Override
-					/**
-					 * acci贸n de  escritura del bot贸n 9
-					 * @param e un evento que representa una acci贸n en el bot贸n
-					 * @return void 
-					 */
-					public void actionPerformed(ActionEvent e) {
-						res.setText(res.getText()+"9"
-								+ "");
-				}});
-				
-				
-				
-				
-				//botones operador
-				bt_sum.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						res.setText(res.getText()+"+");
-				}});
-				
-				bt_res.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-					
-						res.setText(res.getText()+"-");
-				}});
-				
-				bt_mult.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-					
-						res.setText(res.getText()+"*");
-				}});
-				
-				bt_div.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						
-						res.setText(res.getText()+"/");
-				}});
-				
-				bt_exp.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						
-						res.setText(res.getText()+"^");
-				}});
-				
-				bt_raiz.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						
-						res.setText(res.getText()+"R");
-				}});
-				
-				bt_supr.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						res.setText("");
-				}});
-				
-				bt_bin.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						res.setText(res.getText()+"BIN");
-				}});
-				
-				bt_log.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						res.setText(res.getText()+"LOG");
-				}});
-				
-				bt_abs.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						res.setText(res.getText()+"ABS");
-				}});
-	}
-				
+		
+	@Override
+	public void actionPerformed(ActionEvent e) {
+
+		int numanterior,numsiguiente;
+		boolean segundo=false;
+		
+		if (e.getSource()==bt_sum){
 			
+			if(segundo==false){
+			res.setText(res.getText()+"+");
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "Dale a el bot髇 '=' ");
+			}
+		}
+		if (e.getSource()==bt_res){
+			if(segundo==false){
+			res.setText(res.getText()+"-");
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "Dale a el bot髇 '=' ");
+			}
+		}
+		if (e.getSource()==bt_mult){
+			if(segundo==false){
+			res.setText(res.getText()+"*");
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "Dale a el bot髇 '=' ");
+			}
+		}
+		if (e.getSource()==bt_div){
+			if(segundo==false){
+			res.setText(res.getText()+"/");
+			}
+			else {
+				JOptionPane.showMessageDialog(null, "Dale a el bot髇 '=' ");
+			}
+		}
+		if (e.getSource()==bt_exp){
+				if(segundo==false){
+				res.setText(res.getText()+"^");
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "Dale a el bot髇 '=' ");
+				}
+		}
+		if (e.getSource()==bt_raiz){
+			res.setText("=");
+		}
+		if (e.getSource()==bt_log){
+			res.setText("=");
+		}
+		if (e.getSource()==bt_abs){
+			res.setText("=");
+		}
+		if (e.getSource()==bt_supr){
+			res.setText(" ");
+		}
+		if (e.getSource()==bt_eq){
+			res.setText("=");
+		}
+				
 		
 		
-	
+	}
 	
 	
 	
@@ -374,7 +275,8 @@ public class Ventana extends JFrame {
 		new Ventana(); 
 
 	}
-	
+
+
 	
 	
 
