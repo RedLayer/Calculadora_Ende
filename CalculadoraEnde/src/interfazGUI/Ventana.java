@@ -23,6 +23,8 @@ import javax.swing.JTextField;
 
 public class Ventana extends JFrame implements ActionListener {
 	
+	boolean segundo=false;
+	
 	private static JButton bt1 =new JButton("1");
 	private static  JButton bt2 =new JButton("2");
 	private static  JButton bt3 =new JButton("3");
@@ -130,6 +132,16 @@ public class Ventana extends JFrame implements ActionListener {
 		panelNums.add(bt8);
 		panelNums.add(bt9);
 		
+		bt1.addActionListener(this);
+		bt2.addActionListener(this);
+		bt3.addActionListener(this);
+		bt4.addActionListener(this);
+		bt5.addActionListener(this);
+		bt6.addActionListener(this);
+		bt7.addActionListener(this);
+		bt8.addActionListener(this);
+		bt9.addActionListener(this);
+		
 		
 		//ESTILO DE VENTANA
 		
@@ -197,13 +209,15 @@ public class Ventana extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		int numanterior,numsiguiente;
-		boolean segundo=false;
+		int num1,num2;
+		
 		
 		if (e.getSource()==bt_sum){
 			
 			if(segundo==false){
+			num1=parsearInt(res.getText());
 			res.setText(res.getText()+"+");
+			segundo=true;
 			}
 			else {
 				JOptionPane.showMessageDialog(null, "Dale a el botón '=' ");
@@ -212,6 +226,7 @@ public class Ventana extends JFrame implements ActionListener {
 		if (e.getSource()==bt_res){
 			if(segundo==false){
 			res.setText(res.getText()+"-");
+			segundo=true;
 			}
 			else {
 				JOptionPane.showMessageDialog(null, "Dale a el botón '=' ");
@@ -220,6 +235,7 @@ public class Ventana extends JFrame implements ActionListener {
 		if (e.getSource()==bt_mult){
 			if(segundo==false){
 			res.setText(res.getText()+"*");
+			segundo=true;
 			}
 			else {
 				JOptionPane.showMessageDialog(null, "Dale a el botón '=' ");
@@ -228,6 +244,7 @@ public class Ventana extends JFrame implements ActionListener {
 		if (e.getSource()==bt_div){
 			if(segundo==false){
 			res.setText(res.getText()+"/");
+			segundo=true;
 			}
 			else {
 				JOptionPane.showMessageDialog(null, "Dale a el botón '=' ");
@@ -236,6 +253,7 @@ public class Ventana extends JFrame implements ActionListener {
 		if (e.getSource()==bt_exp){
 				if(segundo==false){
 				res.setText(res.getText()+"^");
+				segundo=true;
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Dale a el botón '=' ");
@@ -254,13 +272,60 @@ public class Ventana extends JFrame implements ActionListener {
 			res.setText(" ");
 		}
 		if (e.getSource()==bt_eq){
+			segundo=true;
 			res.setText("=");
+			
+			
+			
+			
+			
 		}
 				
+		
+		if (e.getSource()==bt1){
+			res.setText(res.getText()+"1");
+			
+		}
+		if (e.getSource()==bt2){
+			res.setText(res.getText()+"2");
+		}
+		if (e.getSource()==bt3){
+			res.setText(res.getText()+"3");
+		}
+		if (e.getSource()==bt4){
+			res.setText(res.getText()+"4");
+		}
+		if (e.getSource()==bt5){
+			res.setText(res.getText()+"5");
+		}
+		if (e.getSource()==bt6){
+			res.setText(res.getText()+"6");
+		}
+		if (e.getSource()==bt7){
+			res.setText(res.getText()+"7");
+		}
+		if (e.getSource()==bt8){
+			res.setText(res.getText()+"8");
+		}
+		if (e.getSource()==bt9){
+			res.setText(res.getText()+"9");
+		}
+		
 		
 		
 	}
 	
+	public static int parsearInt(String num) {
+		int result=-1;
+		try {
+			result=Integer.parseInt(num);
+		} catch (NumberFormatException e) {
+			 
+		}
+		
+		
+		return result;
+	}
 	
 	
 	
