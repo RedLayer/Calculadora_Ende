@@ -315,6 +315,11 @@ public class Ventana extends JFrame implements ActionListener {
 		
 	}
 	
+	/**
+	 * Parsea un string a int
+	 * @param num numero pasado a String
+	 * @return devuelve el resultado de el parseo a int
+	 */
 	public static int parsearInt(String num) {
 		int result=-1;
 		try {
