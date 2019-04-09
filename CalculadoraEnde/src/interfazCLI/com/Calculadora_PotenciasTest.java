@@ -133,12 +133,6 @@ class Calculadora_Potencias_PotenciasTest {
 			assertEquals(87, calc.resta(87,1));
 		}
 		
-		/*TO_DO
-		 
-		 potencia con fallo
-		 potencia sin fallo
-		 */
-		
 		/**
 		 * Segunda prueba de resta que da fallo
 		 * @param num1 Primer numero de la resta
