@@ -6,7 +6,8 @@ import java.io.InputStreamReader;
 
 
 /**
- * Es la clase que se encarga de crear la calculadora en modo CLI
+ * Es la clase que se encarga de crear la calculadora en para la interfaz de linea de comandos (CLI)
+ * El programa dara unas opciones y segun la opcion ejecutara una ecuacion u otra.
  * @author Pablo
  *
  */
@@ -76,6 +77,7 @@ private static void LanzarMenu() {
 			System.out.println("Número no valido");
 			break;
 		}
+		System.out.println("------------------------------------------------------------------------");
 	}
 	System.out.println("Adios!");
 	
@@ -102,121 +104,121 @@ public static int leeInt() {
 
 /**
  * Pide dos números al usuario para realizar una suma entre ellos
- * @return Devuelve un entero con la suma de los números
+ * @return Devuelve un String con toda la ecuacion de la suma, para sacarlo por pantalla en la linea de comandos
  */
-private static int sumar() {
+private static String sumar() {
 	Calculadora_Potencias calc = new Calculadora_Potencias();
 	System.out.print("Inserta el primer número: ");
 	int num1 = leeInt();
 	System.out.print("Inserta el segundo número: ");
 	int num2 = leeInt();
 	
-	return calc.suma(num1,num2);
+	return num1 + "+" + num2 + "=" + calc.suma(num1,num2);
 }
 
 /**
  * Pide dos números al usuario para realizar una resta entre ellos
- * @return Devuelve el resultado de la resta de los números en un entero
+ * @return Devuelve un String con toda la ecuacion de la resta, para sacarlo por pantalla en la linea de comandos
  */
-private static int restar() {
+private static String restar() {
 	Calculadora_Potencias calc = new Calculadora_Potencias();
 	System.out.print("Inserta el primer número: ");
 	int num1 = leeInt();
 	System.out.print("Inserta el segundo número: ");
 	int num2 = leeInt();
 	
-	return calc.resta(num1,num2);
+	return num1 + "+" + num2 + "=" + calc.resta(num1,num2);
 }
 
 /**
  * Pide dos números al usuario para realizar una multiplicación entre ellos
- * @return Devuelve el resultado de la multiplicación de los números en un entero
+ * @return Devuelve un String con toda la ecuacion de la multiplicación, para sacarlo por pantalla en la linea de comandos
  */
-private static int multiplicar() {
+private static String multiplicar() {
 	Calculadora_Potencias calc = new Calculadora_Potencias();
 	System.out.print("Inserta el primer número: ");
 	int num1 = leeInt();
 	System.out.print("Inserta el segundo número: ");
 	int num2 = leeInt();
 	
-	return calc.multi(num1,num2);
+	return num1 + "x" + num2 + "=" + calc.multi(num1,num2);
 }
 
 /**
  * Pide dos números al usuario para realizar una división entre ellos
- * @return Devuelve el resultado de la división de los números en un entero
+ * @return Devuelve un String con toda la ecuacion de la división, para sacarlo por pantalla en la linea de comandos
  */
-private static double dividir() {
+private static String dividir() {
 	Calculadora_Potencias calc = new Calculadora_Potencias();
 	System.out.print("Inserta el primer número: ");
 	int num1 = leeInt();
 	System.out.print("Inserta el segundo número: ");
 	int num2 = leeInt();
 	
-	return calc.division(num1,num2);
+	return num1 +"/"+num2+"="+calc.division(num1,num2);
 }
 
 /**
  * Pide un número al usuario para sacar el valor absoluto del mismo
- * @return Devuelve el valor absoluto en un entero
+ * @return Devuelve el valor absoluto del entero en un String, para sacarlo por pantalla en la linea de comandos
  */
-private static int abs() {
+private static String abs() {
 	Calculadora_Potencias calc = new Calculadora_Potencias();
 	System.out.print("Inserta el número para pasar al valor absoluto: ");
 	int num1 = leeInt();
-	return calc.valorAbsoluto(num1);
+	return "Valor absoluto de " + num1 + "="+calc.valorAbsoluto(num1);
 }
 
 /**
  * Pide dos número (número y potencia) y realiza la ecuación
- * @return Devuelve el número resultante de la potencia en un entero
+ * @return Devuelve un String con la pontencia del numero introducido, para sacarlo por pantalla en la linea de comandos
  */
-private static int pot() {
+private static String pot() {
 	Calculadora_Potencias calc = new Calculadora_Potencias();
 	System.out.print("Inserta el número: ");
 	int num1 = leeInt();
 	System.out.print("Inserta la potencia: ");
 	int num2 = leeInt();
 	
-	return calc.potencia(num1,num2);
+	return num1+"^"+num2+"="+calc.potencia(num1,num2);
 }
 
 /**
  * Pide un número y lo pasa a binario
- * @return Devuelve un String con el número en binario
+ * @return Devuelve un String con el número en binario, para sacarlo por pantalla en la linea de comandos
  */
 private static String bin() {
 	Calculadora_Potencias calc = new Calculadora_Potencias();
 	System.out.print("Inserta el número que pasar a binario: ");
 	int num1 = leeInt();
 	
-	return calc.pasarABinario(num1);
+	return "Numero " + num1 + " en binario="+calc.pasarABinario(num1);
 }
 
 /**
  * Pide un número y devuelve la raiz del mismo
- * @return Devuelve la raiz del número
+ * @return Devuelve la raiz del número en un String, para sacarlo por pantalla en la linea de comandos
  */
-private static float rz() {
+private static String rz() {
 	Calculadora_Potencias calc = new Calculadora_Potencias();
 	System.out.print("Inserta el número al que hacerle la raiz: ");
 	int num1 = leeInt();
 	
-	return calc.raiz(num1);
+	return "Raiz de "+num1+"="+calc.raiz(num1);
 }
 
 /**
  * Pide un número y una base y saca el logaritmo
- * @return Devuelve el logaritmo del número en base a la pedida por teclado
+ * @return Devuelve el logaritmo del número en base a la pedida por teclado en un String, para sacarlo por pantalla en la linea de comandos
  */
-private static double log() {
+private static String log() {
 	Calculadora_Potencias calc = new Calculadora_Potencias();
 	System.out.print("Inserta el número: ");
 	int num1 = leeInt();
 	System.out.print("Inserta la base: ");
 	int num2 = leeInt();
 	
-	return calc.log(num1,num2);
+	return "Logaritmo de " + num1 + " en base " + num2 + "=" + calc.log(num1,num2);
 }
 
 }
