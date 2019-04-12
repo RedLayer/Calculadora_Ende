@@ -30,6 +30,7 @@ public class Ventana extends JFrame implements ActionListener {
 	private int num1=-0,num2=0;
 	private Calculadora_Potencias calc= new Calculadora_Potencias(); 
 	
+	private static JButton bt0 =new JButton("0");
 	private static JButton bt1 =new JButton("1");
 	private static  JButton bt2 =new JButton("2");
 	private static  JButton bt3 =new JButton("3");
@@ -124,7 +125,7 @@ public class Ventana extends JFrame implements ActionListener {
 		
 		//panel de botones (Sur)
 		panelNums = new JPanel();
-		panelNums.setLayout(new GridLayout(3,3));
+		panelNums.setLayout(new GridLayout(2,2));
 		panelNums.setPreferredSize(new Dimension(30, 250));
 		
 		panelNums.add(bt1);
@@ -136,6 +137,7 @@ public class Ventana extends JFrame implements ActionListener {
 		panelNums.add(bt7);
 		panelNums.add(bt8);
 		panelNums.add(bt9);
+		panelNums.add(bt0);
 		
 		bt1.addActionListener(this);
 		bt2.addActionListener(this);
@@ -146,11 +148,12 @@ public class Ventana extends JFrame implements ActionListener {
 		bt7.addActionListener(this);
 		bt8.addActionListener(this);
 		bt9.addActionListener(this);
-		
+		bt0.addActionListener(this);
 		
 		//ESTILO DE VENTANA
 		
 		setBackground(Color.white);
+		bt0.setBackground(Color.white);
 		bt1.setBackground(Color.white);
 		bt2.setBackground(Color.white);
 		bt3.setBackground(Color.white);
@@ -175,6 +178,7 @@ public class Ventana extends JFrame implements ActionListener {
 		
 		res.setFont(res.getFont().deriveFont ( 60f ));
 		
+		bt0.setFont(bt0.getFont().deriveFont ( 60f ));
 		bt1.setFont(bt1.getFont().deriveFont ( 60f ));
 		bt2.setFont(bt2.getFont().deriveFont ( 60f ));
 		bt3.setFont(bt3.getFont().deriveFont ( 60f ));
