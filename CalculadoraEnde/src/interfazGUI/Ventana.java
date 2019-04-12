@@ -331,7 +331,7 @@ public class Ventana extends JFrame implements ActionListener {
 			num1=parsearInt(res.getText());
 			res.setText(num1+"");
 		}
-		JOptionPane.showMessageDialog(null,num1+ " " + operador + " " +num2);		
+		
 				
 			segundo=false;
 		
