@@ -86,7 +86,7 @@ public class Calculadora_Potencias {
 	 */
 	public double division(int num1, int  num2) {
 		try {
-			float div=num1/num2;
+			double div=(double)num1/num2;
 			return div;
 		} catch (ArithmeticException e) {
 			return -1;

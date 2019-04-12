@@ -244,8 +244,10 @@ public class Ventana extends JFrame implements ActionListener {
 		}
 		if (e.getSource()==bt_mult){
 			if(segundo==false){
-			res.setText(res.getText()+"*");
+			num1=parsearInt(res.getText());
+			res.setText("");
 			segundo=true;
+			operador='*';
 			}
 			else {
 				JOptionPane.showMessageDialog(null, "Dale a el botón '=' ");
@@ -253,7 +255,9 @@ public class Ventana extends JFrame implements ActionListener {
 		}
 		if (e.getSource()==bt_div){
 			if(segundo==false){
-			res.setText(res.getText()+"/");
+			num1=parsearInt(res.getText());
+			res.setText("");
+			operador='/';
 			segundo=true;
 			}
 			else {
@@ -262,8 +266,10 @@ public class Ventana extends JFrame implements ActionListener {
 		}
 		if (e.getSource()==bt_exp){
 				if(segundo==false){
-				res.setText(res.getText()+"^");
-				segundo=true;
+					num1=parsearInt(res.getText());
+					res.setText("");
+					operador='^';
+					segundo=true;
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "Dale a el botón '=' ");
@@ -273,6 +279,11 @@ public class Ventana extends JFrame implements ActionListener {
 			num1=parsearInt(res.getText());
 			
 			res.setText(calc.raiz(num1)+"");
+		}
+		if (e.getSource()==bt_bin){
+			num1=parsearInt(res.getText());
+			
+			res.setText(calc.pasarABinario(num1)+"");
 		}
 		if (e.getSource()==bt_log){
 			num1=parsearInt(res.getText());
@@ -301,6 +312,17 @@ public class Ventana extends JFrame implements ActionListener {
 			if(operador=='-') {
 				res.setText(calc.resta(num1, num2)+"");
 			}
+			if(operador=='*') {
+				res.setText(calc.multi(num1, num2)+"");
+			}
+			if(operador=='/') {
+				res.setText(calc.division(num1, num2)+"");
+			}
+			if(operador=='^') {
+				res.setText(calc.potencia(num1, num2)+"");
+			}
+
+			
 			if(operador=='?') {
 				res.setText("no hay resultado (" + operador+ ")" );
 			}
