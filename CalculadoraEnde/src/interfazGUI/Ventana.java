@@ -345,7 +345,10 @@ public class Ventana extends JFrame implements ActionListener {
 			
 			
 		}
-				
+		if (e.getSource()==bt0){
+			res.setText(res.getText()+"0");
+			
+		}
 		
 		if (e.getSource()==bt1){
 			res.setText(res.getText()+"1");
