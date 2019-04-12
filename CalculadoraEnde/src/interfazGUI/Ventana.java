@@ -14,6 +14,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import interfazCLI.com.Calculadora_Potencias;
+
 
 /**
  * Clase Ventana, interfaz grafica de la calculadora.
@@ -24,6 +26,9 @@ import javax.swing.JTextField;
 public class Ventana extends JFrame implements ActionListener {
 	
 	boolean segundo=false;
+	private char operador='?';
+	private int num1=-0,num2=0;
+	private Calculadora_Potencias calc= new Calculadora_Potencias(); 
 	
 	private static JButton bt1 =new JButton("1");
 	private static  JButton bt2 =new JButton("2");
@@ -209,15 +214,18 @@ public class Ventana extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		int num1,num2;
+		
+		
 		
 		
 		if (e.getSource()==bt_sum){
 			
 			if(segundo==false){
 			num1=parsearInt(res.getText());
-			res.setText(res.getText()+"+");
+			res.setText("");
 			segundo=true;
+			operador='+';
+			
 			}
 			else {
 				JOptionPane.showMessageDialog(null, "Dale a el botón '=' ");
@@ -225,8 +233,10 @@ public class Ventana extends JFrame implements ActionListener {
 		}
 		if (e.getSource()==bt_res){
 			if(segundo==false){
-			res.setText(res.getText()+"-");
+			num1=parsearInt(res.getText());
+			res.setText("");
 			segundo=true;
+			operador='-';
 			}
 			else {
 				JOptionPane.showMessageDialog(null, "Dale a el botón '=' ");
@@ -260,20 +270,49 @@ public class Ventana extends JFrame implements ActionListener {
 				}
 		}
 		if (e.getSource()==bt_raiz){
-			res.setText("=");
+			num1=parsearInt(res.getText());
+			
+			res.setText(calc.raiz(num1)+"");
 		}
 		if (e.getSource()==bt_log){
-			res.setText("=");
-		}
+			num1=parsearInt(res.getText());
+			
+			res.setText(calc.log(num1,10)+"");		}
 		if (e.getSource()==bt_abs){
-			res.setText("=");
+			
+			num1=parsearInt(res.getText());
+			
+			res.setText(calc.valorAbsoluto(num1)+"");
 		}
 		if (e.getSource()==bt_supr){
-			res.setText(" ");
+			res.setText("");
+			segundo=false;
+			num1=0;
+			num2=0;
 		}
 		if (e.getSource()==bt_eq){
-			segundo=true;
-			res.setText("=");
+			
+			if(segundo) {
+			num2=parsearInt(res.getText());
+			
+			if(operador=='+') {
+				res.setText(calc.suma(num1, num2)+"");
+			}
+			if(operador=='-') {
+				res.setText(calc.resta(num1, num2)+"");
+			}
+			if(operador=='?') {
+				res.setText("no hay resultado (" + operador+ ")" );
+			}
+		}
+		else {
+			num1=parsearInt(res.getText());
+			res.setText(num1+"");
+		}
+		JOptionPane.showMessageDialog(null,num1+ " " + operador + " " +num2);		
+				
+			segundo=false;
+		
 			
 			
 			
@@ -315,17 +354,12 @@ public class Ventana extends JFrame implements ActionListener {
 		
 	}
 	
-	/**
-	 * Parsea un string a int
-	 * @param num numero pasado a String
-	 * @return devuelve el resultado de el parseo a int
-	 */
 	public static int parsearInt(String num) {
 		int result=-1;
 		try {
 			result=Integer.parseInt(num);
 		} catch (NumberFormatException e) {
-			 
+			 res.setText("MATH ERROR");
 		}
 		
 		
