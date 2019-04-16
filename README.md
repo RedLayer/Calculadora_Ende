@@ -3,8 +3,4 @@
 <div align="justify" >Proyecto de calculadora realizado para ENDE por Aaron,  Aketza y Pablo. El trabajo consiste en que cada persona construya una parte de  la calculadora, incluyendo métodos, interfaz gráfica, Junit, y JavaDoc teniendo  el proyecto almacenando en GitHub y tirando todos del mismo repositorio.</div>
 <p>Fallo</p>
 
-gtjunhjinkjn
-
-
-
-tfttttttttttttttttttttttttttttttttttttttttttt
+8888888888888888
